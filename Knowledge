@@ -1,0 +1,10 @@
+# TCP SEQUENCE No.
+
+Each endpoint of a TCP connection establishes a starting sequence number for packets it sends, and sends this number in the SYN packet 
+that it sends as part of establishing a connection.
+
+There is no requirement for either end to follow a particular procedure in choosing the starting sequence number. 
+The operating system is free to use any mechanism it likes, but generally it's best if it chooses a random number, as this is more secure.
+
+From that starting point, each packet sent by either end contains two sequence numbers - one to specify where in the stream the packet is,
+and an ACK sequence number which signifies the number of bytes received. Both numbers are offset by the starting sequence number.
